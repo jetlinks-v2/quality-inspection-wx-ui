@@ -1,0 +1,2 @@
+<script setup lang="ts">defineProps<{title?:string}>();
+</script><template><section class="panel mobile-card"><header v-if="title||$slots.extra" class="card-heading"><strong>{{title}}</strong><slot name="extra"/></header><slot/></section></template><style scoped>.mobile-card{padding:16px;margin-bottom:12px}.card-heading{display:flex;gap:12px;justify-content:space-between;margin-bottom:12px}</style>

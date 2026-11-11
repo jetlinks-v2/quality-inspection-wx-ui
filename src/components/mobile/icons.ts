@@ -1,0 +1,17 @@
+import {defineComponent,h} from 'vue'
+import {Icon} from 'vant'
+export const ArrowRightOutlined=defineComponent({name:'ArrowRightOutlined',setup:()=>()=>h(Icon,{name:'arrow'})})
+export const CarryOutOutlined=defineComponent({name:'CarryOutOutlined',setup:()=>()=>h(Icon,{name:'todo-list-o'})})
+export const CheckCircleOutlined=defineComponent({name:'CheckCircleOutlined',setup:()=>()=>h(Icon,{name:'passed'})})
+export const ClockCircleOutlined=defineComponent({name:'ClockCircleOutlined',setup:()=>()=>h(Icon,{name:'clock-o'})})
+export const EnvironmentOutlined=defineComponent({name:'EnvironmentOutlined',setup:()=>()=>h(Icon,{name:'location-o'})})
+export const FileSearchOutlined=defineComponent({name:'FileSearchOutlined',setup:()=>()=>h(Icon,{name:'records-o'})})
+export const HistoryOutlined=defineComponent({name:'HistoryOutlined',setup:()=>()=>h(Icon,{name:'clock-o'})})
+export const HomeOutlined=defineComponent({name:'HomeOutlined',setup:()=>()=>h(Icon,{name:'wap-home-o'})})
+export const LeftOutlined=defineComponent({name:'LeftOutlined',setup:()=>()=>h(Icon,{name:'arrow-left'})})
+export const LogoutOutlined=defineComponent({name:'LogoutOutlined',setup:()=>()=>h(Icon,{name:'revoke'})})
+export const ReloadOutlined=defineComponent({name:'ReloadOutlined',setup:()=>()=>h(Icon,{name:'replay'})})
+export const RightOutlined=defineComponent({name:'RightOutlined',setup:()=>()=>h(Icon,{name:'arrow'})})
+export const SafetyCertificateOutlined=defineComponent({name:'SafetyCertificateOutlined',setup:()=>()=>h(Icon,{name:'shield-o'})})
+export const ToolOutlined=defineComponent({name:'ToolOutlined',setup:()=>()=>h(Icon,{name:'setting-o'})})
+export const UserOutlined=defineComponent({name:'UserOutlined',setup:()=>()=>h(Icon,{name:'user-o'})})
