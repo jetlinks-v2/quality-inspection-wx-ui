@@ -1,7 +1,10 @@
 import { reactive } from 'vue'
 import type { MobileAppContext, MobileAppRequest } from '@jetlinks-mobile-core'
 
-type Options = NonNullable<Parameters<MobileAppRequest>[1]>
+type HostOptions = NonNullable<Parameters<MobileAppRequest>[1]>
+// The current host forwards HTTP methods to fetch, while its type omits DELETE.
+// Keep that wire method and business download intent local; do not add host APIs.
+type Options = Omit<HostOptions, 'method'> & { method?: HostOptions['method'] | 'DELETE'; responseType?: 'blob' }
 interface Binding { context: MobileAppContext; signature: string; controller: AbortController }
 let binding: Binding | undefined
 export const shellState = reactive({ active: false, error: '', generation: 0 })
@@ -41,7 +44,7 @@ export async function shellRequest<T>(path: string, options: Options = {}): Prom
   options.signal?.addEventListener('abort', abort, { once: true })
   if (options.signal?.aborted) controller.abort()
   try {
-    const result = await current.context.request(path, { ...options, signal: controller.signal })
+    const result = await current.context.request(path, { ...options, method: options.method as HostOptions['method'], signal: controller.signal })
     assertCurrent(current)
     if (controller.signal.aborted) throw new DOMException('操作已取消', 'AbortError')
     return result as T
