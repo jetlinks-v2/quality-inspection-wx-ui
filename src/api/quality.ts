@@ -1,5 +1,4 @@
 import {request,downloadBlob} from './http'
-import {state,clearSession} from '../services/session'
 import {qualityClient} from '../../shared/client'
 import type {Authorization} from '../types'
 export const authorize=()=>request<Authorization>('/authorize/me')

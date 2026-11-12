@@ -119,3 +119,5 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--primary);outline-of
  .login-hero>img{width:7.5rem}
 }
 @media(prefers-reduced-motion:reduce){.metric{transition:none}}
+
+.status-tabs>.van-button{flex:0 0 auto;white-space:nowrap;min-width:76px;height:44px;padding:0 14px;border:0;border-radius:0;background:transparent;position:relative}

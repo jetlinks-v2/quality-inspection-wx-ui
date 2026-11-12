@@ -1,4 +1,12 @@
 <script setup lang="ts" generic="T = unknown">
+import {Button as VanButton} from 'vant'
+import {Cell as VanCell} from 'vant'
+import {Checkbox as VanCheckbox} from 'vant'
+import {Empty as VanEmpty} from 'vant'
+import {Field as VanField} from 'vant'
+import {Icon as VanIcon} from 'vant'
+import {Loading as VanLoading} from 'vant'
+import {Search as VanSearch} from 'vant'
 import {computed,ref,watch} from 'vue'
 import {selectionRows,type Choice,type Option} from './selection'
 import MobilePopup from './MobilePopup.vue'

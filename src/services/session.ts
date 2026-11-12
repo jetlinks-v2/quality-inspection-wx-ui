@@ -1,3 +1,4 @@
+import {inShell} from '../shell/runtime'
 import {reactive} from 'vue'
 import type {Authorization,RuntimeConfig,Session} from '../types'
 import {applicationEntry,apiBase} from './entry'
@@ -32,7 +33,7 @@ export function setSession(value:Session){
  sessionStorage.setItem(KEY,JSON.stringify(session));revision++;state.authorization=undefined;state.projectId=undefined;state.session=session
  
 }
-export function clearSession(removeStored=true){revision++;state.session=undefined;state.authorization=undefined;state.projectId=undefined;if(removeStored)sessionStorage.removeItem(KEY)}
+export function clearSession(removeStored=true){revision++;state.session=undefined;state.authorization=undefined;state.projectId=undefined;if(removeStored&&!inShell())sessionStorage.removeItem(KEY)}
 export const can=(action:string)=>!!state.authorization?.permissions.some(p=>p.id==='quality-work-order'&&p.actions.includes(action))
 export const roleIds=()=>state.authorization?.dimensions?.filter(d=>d.type==='role').map(d=>d.id)||[]
 if(typeof window!=='undefined')window.addEventListener('quality:host-invalid',()=>clearSession(false))

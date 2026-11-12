@@ -1,3 +1,4 @@
+import {inShell,shellRequest} from '../shell/runtime'
 import {clearSession,state,sessionRevision} from '../services/session'
 import {allowedPath,hosted,hostRequest} from '../services/host'
 import type {Session} from '../types'
@@ -10,6 +11,7 @@ function expire(session:Session|undefined,revision:number){if(session===state.se
 /** 所有业务及附件共享身份隔离；候选会话仅用于持久化前校验 /authorize/me。 */
 async function send<T>(path:string,body:unknown,method:string,scoped:boolean,session:Session|undefined,blob:boolean):Promise<T>{
  if(!allowedPath(path))throw new ApiError('此请求不在应用访问范围内',400)
+ if(inShell()){if(!scoped)throw Error('外壳模式由主应用管理认证');return shellRequest<T>(path,{method:method as 'GET'|'POST'|'PUT'|'DELETE',body,...blob?{responseType:'blob' as const}:{}})}
  if(hosted){if(!scoped)throw Error('APP 模式不使用浏览器认证');return hostRequest<T>(path,method,body,state.projectId,blob)}
  const revision=sessionRevision(),projectId=state.projectId,multipart=body instanceof FormData
  const response=await fetch(state.config.apiBase+path,{method,credentials:'omit',headers:{...(scoped?headers(session):{}),...(body!==undefined&&!multipart?{'Content-Type':'application/json'}:{})},body:body===undefined?undefined:multipart?body as FormData:JSON.stringify(body),signal:AbortSignal.timeout(60000)})

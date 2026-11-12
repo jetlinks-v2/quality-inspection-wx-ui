@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {Tab as VanTab} from 'vant'
+import {Tabs as VanTabs} from 'vant'
 defineProps<{modelValue?:string|number;options:{label:string;value:string|number}[]}>()
 const emit=defineEmits<{'update:modelValue':[value:string|number]}>()
 </script>

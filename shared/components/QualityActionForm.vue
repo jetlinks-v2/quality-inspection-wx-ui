@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import MobileNotice from '../../src/components/mobile/MobileNotice.vue'
+import MobileCard from '../../src/components/mobile/MobileCard.vue'
+import SelectField from '../../src/components/mobile/SelectField.vue'
+import MobilePopup from '../../src/components/mobile/MobilePopup.vue'
+import BusinessField from '../../src/components/mobile/BusinessField.vue'
+import BusinessForm from '../../src/components/mobile/BusinessForm.vue'
+import {Button as VanButton} from 'vant'
+import {Field as VanField} from 'vant'
+import {Radio as VanRadio} from 'vant'
+import {RadioGroup as VanRadioGroup} from 'vant'
+import {Stepper as VanStepper} from 'vant'
 import {qualityText as qt} from '../i18n'
 
 import {computed,defineAsyncComponent} from 'vue'

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {Button as VanButton} from 'vant'
 import {computed} from 'vue'
 import {useRoute,useRouter} from 'vue-router'
 import {HomeOutlined,CarryOutOutlined,SafetyCertificateOutlined,UserOutlined,LeftOutlined} from './components/mobile/icons'
@@ -13,7 +14,7 @@ const navigation=[
  {path:'/orders?mode=inspect',activePath:'/orders',label:qt('h5MyOrders'),icon:CarryOutOutlined},
  {path:'/profile',activePath:'/profile',label:qt('h5Mine'),icon:UserOutlined}
 ]
-const back=()=>{if(history.state?.back)router.back();else void router.replace('/')}
+const back=()=>{if(router.options.history.state.back)router.back();else void router.replace('/')}
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 import {qualityText as qt} from './i18n'
 import {computed,ref} from 'vue'
 import type {QualityClient} from './client'
-import {messageOf,type Action,type CheckRecord,type Context,type Detail,type Person,type Result} from './types'
+import {messageOf,type Action,type Context,type Detail,type Person,type Result} from './types'
 /** 两端共用处置编排；提交失败保留表单，成功后重读版本及状态。 */
 export function useQualityDetail(api:QualityClient){
  const data=ref<Detail>(),context=ref<Context>(),loading=ref(false),saving=ref(false),error=ref(''),action=ref(''),rectificationId=ref(''),description=ref(''),assigneeIds=ref<string[]>([]),recordIds=ref<string[]>([]),results=ref<Result[]>([]),candidates=ref<Person[]>([]),success=ref('')

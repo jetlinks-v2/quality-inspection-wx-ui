@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {Field as VanField} from 'vant'
 import {computed,inject} from 'vue'
 import {formContext,fieldRules,type Rule} from './formContext'
 const props=defineProps<{name?:string|string[];label?:string;rules?:Rule[];required?:boolean}>()

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {Button as VanButton} from 'vant'
+import {Empty as VanEmpty} from 'vant'
+import {Loading as VanLoading} from 'vant'
 import {computed,onMounted,onBeforeUnmount,ref,watch} from 'vue'
 import {useRouter} from 'vue-router'
 import App from './App.vue'

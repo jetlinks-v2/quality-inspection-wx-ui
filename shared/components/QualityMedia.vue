@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import MobileLoading from '../../src/components/mobile/MobileLoading.vue'
+import MobileNotice from '../../src/components/mobile/MobileNotice.vue'
+import {Button as VanButton} from 'vant'
+import {Image as VanImage} from 'vant'
+import {Uploader as VanUploader} from 'vant'
 import {qualityText as qt} from '../i18n'
 
 import {reactive} from 'vue'

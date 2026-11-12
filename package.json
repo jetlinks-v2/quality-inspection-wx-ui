@@ -14,10 +14,7 @@
   "dependencies": {
     "dayjs": "1.11.13",
     "jsencrypt": "3.3.2",
-    "vue": "3.5.30",
-    "vue-router": "4.5.0",
-    "altcha": "3.2.2",
-    "vant": "4.9.22"
+    "altcha": "3.2.2"
   },
   "devDependencies": {
     "@types/node": "22.18.0",
@@ -26,10 +23,26 @@
     "vite": "7.1.5",
     "vue-tsc": "3.0.6",
     "esbuild": "0.25.12",
-    "playwright": "1.56.1"
+    "playwright": "1.56.1",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3",
+    "vant": "^4.10.2"
   },
   "engines": {
     "node": ">=22.18.0"
   },
-  "description": "品质核查独立 H5"
+  "description": "品质核查独立 H5",
+  "jetlinksMobile": {
+    "id": "quality-app",
+    "name": "品质核查",
+    "templateCodes": [
+      "QualityInspection"
+    ],
+    "entry": "index.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3",
+    "vant": "^4.10.2"
+  }
 }

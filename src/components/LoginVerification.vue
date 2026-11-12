@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import MobileLoading from './mobile/MobileLoading.vue'
+import MobileNotice from './mobile/MobileNotice.vue'
+import MobilePopup from './mobile/MobilePopup.vue'
+import {Button as VanButton} from 'vant'
+import {Field as VanField} from 'vant'
 import 'altcha/external'
 import 'altcha/altcha.css'
 import 'altcha/i18n/zh-cn'

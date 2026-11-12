@@ -39,7 +39,7 @@ export async function resolveHost():Promise<MobileContext> {
 export async function initializeHost(){hostState.revision++;identity='';hostState.context=undefined;hostState.error=undefined;return resolveHost()}
 export function allowedPath(path:string):boolean {
  if(!path.startsWith('/')||path.startsWith('//')||/[\\#]/.test(path))return false
- let decoded:string;try{decoded=decodeURIComponent(path.split('?')[0])}catch{return false}
+ let decoded:string;try{decoded=decodeURIComponent(path.split('?')[0]||'')}catch{return false}
  if(decoded.includes('..')||decoded.includes('://')||decoded.includes('\\'))return false
  return path==='/authorize/me'||path==='/user-token/reset'||["/quality/", "/file/"].some(prefix=>path.startsWith(prefix))
 }

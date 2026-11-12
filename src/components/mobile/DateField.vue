@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import {Button as VanButton} from 'vant'
+import {DatePicker as VanDatePicker} from 'vant'
+import {Field as VanField} from 'vant'
+import {Tab as VanTab} from 'vant'
+import {Tabs as VanTabs} from 'vant'
+import {TimePicker as VanTimePicker} from 'vant'
 import {computed,ref} from 'vue'
 import dayjs from 'dayjs'
 import type {Dayjs} from 'dayjs'

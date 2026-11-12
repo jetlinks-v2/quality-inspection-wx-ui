@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {Button as VanButton} from 'vant'
+import {Tag as VanTag} from 'vant'
 import {EnvironmentOutlined,ClockCircleOutlined,ArrowRightOutlined} from '../components/mobile/icons'
 import {orderStates,time,type WorkOrder} from '../../shared/types'
 import {qualityText as qt} from '../../shared/i18n'

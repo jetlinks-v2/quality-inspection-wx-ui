@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {Form as VanForm} from 'vant'
 import {computed,provide,ref} from 'vue'
 import type {FormInstance} from 'vant'
 import {formContext} from './formContext'

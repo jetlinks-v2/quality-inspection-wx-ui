@@ -23,6 +23,8 @@
     "src/**/*.vue",
     "vite.config.ts",
     "shared/**/*.ts",
-    "shared/**/*.vue"
+    "shared/**/*.vue",
+    "index.ts",
+    "types/**/*.d.ts"
   ]
 }

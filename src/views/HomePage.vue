@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import MobileLoading from '../components/mobile/MobileLoading.vue'
+import MobileNotice from '../components/mobile/MobileNotice.vue'
+import {Button as VanButton} from 'vant'
 import {reactive} from 'vue'
 import {ArrowRightOutlined,ReloadOutlined,FileSearchOutlined,ToolOutlined,SafetyCertificateOutlined,CheckCircleOutlined} from '../components/mobile/icons'
 import {useQualityHome} from '../hooks/useQualityHome'
@@ -15,9 +18,9 @@ const icons={inspect:FileSearchOutlined,rectify:ToolOutlined,review:SafetyCertif
   <div class="home-content">
    <div class="home-greeting"><h2>{{state.authorization?.user.name||state.authorization?.user.username||qt('h5Employee')}}{{qt('h5Hello')}}</h2><p>{{qt('h5EmployeeWorkspace')}}</p></div>
    <router-link class="inspection-banner" to="/orders?mode=inspect">
-    <img class="banner-background" src="/images/quality/summary-bg.png" alt="" />
+    <img class="banner-background" src="../assets/images/quality/summary-bg.png" alt="" />
     <div class="banner-copy"><span class="eyebrow">{{qt('h5QualityTitle')}}</span><h2>{{qt('h5InspectBanner')}}</h2><span class="banner-action">{{qt('h5StartInspection')}} <ArrowRightOutlined aria-hidden="true" /></span></div>
-    <img class="inspection-art" src="/images/quality/inspection.svg" alt="" fetchpriority="high" />
+    <img class="inspection-art" src="../assets/images/quality/inspection.svg" alt="" fetchpriority="high" />
    </router-link>
    <div class="section-heading"><h2>{{qt('h5MyTasks')}}</h2><van-button plain size="small" :loading="vm.loading" @click="vm.load" native-type="button"><ReloadOutlined aria-hidden="true" />{{qt('refresh')}}</van-button></div>
    <MobileNotice v-if="vm.error" :message="vm.error" type="error" show-icon />
@@ -32,7 +35,7 @@ const icons={inspect:FileSearchOutlined,rectify:ToolOutlined,review:SafetyCertif
    </MobileLoading>
    <div class="section-heading records-heading"><h2>{{qt('h5InspectionRecords')}}</h2></div>
    <router-link class="records-banner" to="/orders?mode=related">
-    <img src="/images/quality/records-bg.png" alt="" loading="lazy" />
+    <img src="../assets/images/quality/records-bg.png" alt="" loading="lazy" />
     <div><h3>{{qt('h5ParticipationHistory')}}</h3><span>{{qt('h5HistoryHint')}} <ArrowRightOutlined aria-hidden="true" /></span></div>
    </router-link>
   </div>

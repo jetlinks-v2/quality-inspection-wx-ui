@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import MobileLoading from '../../src/components/mobile/MobileLoading.vue'
+import MobileNotice from '../../src/components/mobile/MobileNotice.vue'
+import MobileCard from '../../src/components/mobile/MobileCard.vue'
+import {Button as VanButton} from 'vant'
+import {Cell as VanCell} from 'vant'
+import {Empty as VanEmpty} from 'vant'
+import {Step as VanStep} from 'vant'
+import {Steps as VanSteps} from 'vant'
+import {Tab as VanTab} from 'vant'
+import {Tabs as VanTabs} from 'vant'
+import {Tag as VanTag} from 'vant'
 import {qualityText as qt} from '../i18n'
 
 import {defineAsyncComponent,onMounted,reactive,ref,watch} from 'vue'

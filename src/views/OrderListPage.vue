@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import MobileLoading from '../components/mobile/MobileLoading.vue'
+import MobileNotice from '../components/mobile/MobileNotice.vue'
+import SelectField from '../components/mobile/SelectField.vue'
+import {Button as VanButton} from 'vant'
+import {Empty as VanEmpty} from 'vant'
+import {Pagination as VanPagination} from 'vant'
+import {Skeleton as VanSkeleton} from 'vant'
 import {reactive} from 'vue'
 import {useRoute,useRouter} from 'vue-router'
 import {ReloadOutlined,EnvironmentOutlined} from '../components/mobile/icons'
@@ -23,7 +30,7 @@ const vm=reactive(useQualityList()),route=useRoute(),router=useRouter()
    <div class="list-caption"><span>{{qt('h5TotalRecordsPrefix')}} <strong>{{vm.total}}</strong> {{qt('h5TotalRecordsSuffix')}}</span></div>
    <MobileLoading :loading="vm.loading">
     <div class="order-list"><WorkOrderCard v-for="order in vm.rows" :key="order.id" :order="order" @open="id=>router.push('/orders/'+id)" /></div>
-    <van-empty v-if="!vm.loading&&!vm.error&&!vm.rows.length" :description="qt('h5NoOrders')" class="quality-empty"><template #image><img src="/images/quality/inspection.svg" alt="" /></template><p>{{qt('h5EmptyHint')}}</p></van-empty>
+    <van-empty v-if="!vm.loading&&!vm.error&&!vm.rows.length" :description="qt('h5NoOrders')" class="quality-empty"><template #image><img src="../assets/images/quality/inspection.svg" alt="" /></template><p>{{qt('h5EmptyHint')}}</p></van-empty>
     <van-skeleton v-if="vm.loading&&!vm.rows.length" active class="list-skeleton" />
    </MobileLoading>
    <van-pagination v-if="vm.total" v-model="vm.current" :total="vm.total" :items-per-page="10" simple class="list-pagination" @change="vm.load" />
